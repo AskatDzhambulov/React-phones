@@ -182,7 +182,7 @@ class Orders extends Component {
   }
 
   render() {
-    const { ordersList, title, isNeedShowDetail, clickedOrderData, storeOrderList } = this.state;
+    const { ordersList, title, isNeedShowDetail, clickedOrderData } = this.state;
     console.log(this.state)
     return (
       <section className='orders'>
@@ -199,7 +199,7 @@ class Orders extends Component {
                         <li key={order.id} className='orders__item'>
                           <img src={order.imageUrl} className='orders__item-image' alt={order.name} />
                           <h3 className='orders__item-name' onClick={() => this.onClickOrder(order)}>{order.name}</h3>
-                          <p className='orders__item-description'>
+                          <p className='orders__item-description'></p>
                             <LinesEllipsis
                               text={order.description}
                               maxLine='1'
@@ -207,7 +207,6 @@ class Orders extends Component {
                               trimRight
                               basedOn='letters'
                             />
-                          </p>
                         </li>
                       )
                     })
